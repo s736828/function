@@ -17,7 +17,7 @@
 
     echo sum(15, 21, 10, 20, 30, 40).'<br>';
     echo g().'<br>';
-    echo circle(10,6.18);
+    echo circle(10);
     ?>
 </body>
 
@@ -30,6 +30,7 @@
 //     return $sum;
 // }
 
+// 有時我們不確定參數的個數，或是不同的參數組合時會有不同的結果，這時可以用不定參數的方式來宣告函式
 function sum(...$arg)
 {
     print_r($arg);
@@ -41,11 +42,13 @@ function sum(...$arg)
     return $totals;
 }
 function g(){
+    //要取用function外的全域變數時使用global關鍵字
     global $name;
     echo "1234" . $name;
 }
 
-function circle($r, $p=3.141596){
+function circle($r, $p=3.141596)
+{
     return $r * $r * $p;
 }
 ?>
