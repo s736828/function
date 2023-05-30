@@ -103,6 +103,7 @@ function insert($table, $cols)
 {
     $dsn = "mysql:host=localhost;charset=utf8;dbname=vote";
     $pdo = new PDO($dsn, 'root', '');
+    // 需要欄位名稱，所以用array_keys($cols)取索引值key
     $col = array_keys($cols);
     echo "<pre>";
     print_r($col);
